@@ -1,46 +1,66 @@
-require("animate_FormOut.js")
 
 function validateEmail(email){
     regex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     if(email.match(regex)){
-        document.getElementById('emailVal').innerHTML = ""
+        
         return true;
     }
     else{
-        document.getElementById('emailVal').innerHTML = "Invalid Email Address"
+        
         return false;
     }
 }
 
 function validateNum(phone){
-    var regex = /^\+?([0-9]{2})\)?([0-9]{10})$/
+    var regex = /^\+?([0-9]{1,2})\)?([0-9]{10})$/
     if(phone.match(regex)){
-        document.getElementById('phoneVal').innerHTML = ""
+        
         return true;
     }
     else
-        document.getElementById('phoneVal').innerHTML = "Invalid Phone Number"
+        
         return false;
 }
 
 function validateName(name){
     if(name == null || name == ""){
-        document.getElementById('nameVal').innerHTML = "Name is mandatory";
+        
         return false;
     } else {
-        document.getElementById('nameVal').innerHTML = "";
+        
         return true;
     }
 }
 
 function validate(){
+    // animation initialisation
+    let tl_FormOut = new gsap.timeline({defaults: {ease: Circ.easeOut}})
+    let cta = document.getElementById('cta')
+    tl_FormOut.paused(true)
+    // /animation initialisation
+
     name = document.getElementById('cust_name').value;
     email = document.getElementById('cust_email').value;
     phone = document.getElementById('cust_phone').value;
 
-    nameValResult = validateName(name)
-    emailValResult = validateEmail(email)
-    phoneValResult = validateNum(phone)
+    if(emailValResult = validateEmail(email)){
+        document.getElementById('emailVal').innerHTML = ""
+    } else {
+        document.getElementById('emailVal').innerHTML = "Invalid Email Address"
+    }
+
+    if(phoneValResult = validateNum(phone)){
+        document.getElementById('phoneVal').innerHTML = ""
+    } else {
+        document.getElementById('phoneVal').innerHTML = "Invalid Phone Number"
+    }
+
+    if(nameValResult = validateName(name)){
+        document.getElementById('nameVal').innerHTML = "";
+    }else {
+        document.getElementById('nameVal').innerHTML = "Name is mandatory";
+    }
+
     if(emailValResult && phoneValResult && nameValResult){
         // set sessionstorage to keep data in memory for adding to database on the next page
         sessionStorage.setItem("name", name)
