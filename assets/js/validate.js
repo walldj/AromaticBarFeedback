@@ -12,7 +12,7 @@ function validateEmail(email){
 }
 
 function validateNum(phone){
-    var regex = /^\+?([0-9]{1,2})\)?([0-9]{10})$/
+    var regex = /^\+?([0-9]{3})\)?([0-9]{12})$/
     if(phone.match(regex)){
         
         return true;
