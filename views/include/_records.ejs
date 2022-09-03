@@ -1,0 +1,28 @@
+<table class="records">
+    <thead class="thead">
+        <tr>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Phone</th>
+            <th>Host</th>
+            <th>Beverage</th>
+            <th>Cleanliness</th>
+            <th>Overall</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody class="tbody">
+        <% for (var i=0; i < feedbacks.length; i++) { %>
+        <tr class="record-row">
+            <td><%= feedbacks[i].name %></td>
+            <td><%= feedbacks[i].email %></td>
+            <td><%= feedbacks[i].phone %></td>
+            <td><%= feedbacks[i].host_rate %></td>
+            <td><%= feedbacks[i].bev_rate %></td>
+            <td><%= feedbacks[i].clean_rate %></td>
+            <td><%= feedbacks[i].overall_rate %></td>
+            <td><%= feedbacks[i].date %></td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>

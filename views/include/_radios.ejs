@@ -1,3 +1,5 @@
+<script src="js/validate.js"></script>
+<script src="js/validate_radio.js"></script>
 <div class="form-container" id="form">
     <h2 class="seq" id="radios_h3">Rate your experience at Aromatic Bar by clicking the checkbox as per your opinon</h2>
         
@@ -11,6 +13,7 @@
         <label for="hostFair">Fair</label>
         <input type="radio" value="Bad" id="hostBad" name="host_rate"/>
         <label for="hostBad">Bad</label>
+        <p class="validation" id="host_rate"></p>
     </div>
 
 
@@ -24,6 +27,7 @@
         <label for="bevFair">Fair</label>
         <input type="radio" value="Bad" id="bevBad" name="bev_rate"/>
         <label for="bevBad">Bad</label>
+        <p class="validation" id="bev_rate"></p>
     </div>
 
 
@@ -37,6 +41,7 @@
         <label for="cleanFair">Fair</label>
         <input type="radio" value="Bad" id="cleanBad" name="clean_rate"/>
         <label for="cleanBad">Bad</label>
+        <p class="validation" id="clean_rate"></p>
     </div>
 
 
@@ -50,9 +55,10 @@
         <label for="overallFair">Fair</label>
         <input type="radio" value="Bad" id="overallBad" name="overall_rate"/>
         <label for="overallBad">Bad</label>
+        <p class="validation" id="overall_rate"></p>
     </div>
 
-    <a onclick="validate()" class="cta seq">Next</a>
+    <a onclick="clickSubmit()" class="cta seq">Submit</a>
 </div>
 
 <script src="js/animate_FormOpen.js"></script>
