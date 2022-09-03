@@ -1,0 +1,21 @@
+<div class="filter-container">
+    <h1 class="records-title">Feedback Records</h1>
+    <h2 class="filter-title">Filter:</h2>
+    <form action="FeedbackRecords" method="get">
+        <select name="question">
+            <option disabled selected>Select Category</option>
+            <option value="host_rate">Host Rating</option>
+            <option value="bev_rate">Beverage Rating</option>
+            <option value="clean_rate">Cleanliness Rating</option>
+            <option value="overall_rate">Overall Rating</option>
+        </select>
+        <select name="answer">
+            <option disabled selected>Select Rating</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+            <option value="Bad">Bad</option>
+        </select>
+        <input type="submit" value="Submit" class="btn-filter">
+    </form>
+</div>

@@ -19,8 +19,6 @@ exports.create = (req,res)=>{
         overall_rate: req.body.overall_rate
     })
 
-    console.log("Bpdy" , req.body)
-
     //save feedback in the database
     feedback
         .save(feedback)
@@ -45,3 +43,4 @@ exports.select = (req,res)=>{
             res.status(500).send({message: err.message || "Retrieve Record Error"})
         })
 }
+

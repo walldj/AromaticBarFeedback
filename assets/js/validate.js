@@ -67,6 +67,7 @@ function validate(){
         sessionStorage.setItem("email", email)
         sessionStorage.setItem("phone", phone)
         
+        sessionStorage.setItem("FormSuccess", 1)
         //animation script
         tl_FormOut.play()
         setTimeout(()=>{

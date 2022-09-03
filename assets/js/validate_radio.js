@@ -48,7 +48,7 @@ function clickSubmit(){
             const selectedValues = getCheckedRadios(radio_names)
             console.log(name,email,phone,selectedValues);
             sessionStorage.clear();
-            
+
             let data = {
                 name: name,
                 email: email,
@@ -67,6 +67,9 @@ function clickSubmit(){
             .then(res => {
                 console.log("Save Request complete! response:", res);
             });
+            sessionStorage.setItem('FormSuccess', true)
+            sessionStorage.setItem('RadioSuccess', true)
+            window.location.href = "FeedbackSuccess"
         }
     } else {
         sessionStorage.clear()

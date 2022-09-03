@@ -1,3 +1,4 @@
+
 <table class="records">
     <thead class="thead">
         <tr>
@@ -21,7 +22,7 @@
             <td><%= feedbacks[i].bev_rate %></td>
             <td><%= feedbacks[i].clean_rate %></td>
             <td><%= feedbacks[i].overall_rate %></td>
-            <td><%= feedbacks[i].date %></td>
+            <td id="tr-date"><%= `${feedbacks[i].date}`.substring(0,`${feedbacks[i].date}`.indexOf(`(`)) %></td>
         </tr>
         <% } %>
     </tbody>
