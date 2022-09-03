@@ -1,3 +1,5 @@
+// animation sequence using GSAP for FormClose
+
 let tl_FormOut = new gsap.timeline({defaults: {ease: Circ.easeOut}})
 let cta = document.getElementById('cta')
 tl_FormOut.paused(true)

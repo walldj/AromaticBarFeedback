@@ -1,17 +1,18 @@
 
 
 function validateIndvRadio(radio_name){
-    var radios = document.getElementsByName(radio_name);
-    var formValid = false;
+    var radios = document.getElementsByName(radio_name);    //get radio buttons by radio name
+    var formValid = false;                                  //flag
 
     var i = 0;
     while (!formValid && i < radios.length) {
         if (radios[i].checked) formValid = true;
         i++;        
-        document.getElementById(radio_name).innerHTML = "";
+        document.getElementById(radio_name).innerHTML = ""; // reset inner html of error <p> to blank
     }
 
-    if (!formValid) document.getElementById(radio_name).innerHTML = "Information is mandatory";
+    //set inner html of error <p> to error
+    if (!formValid) document.getElementById(radio_name).innerHTML = "Information is mandatory"; 
     return formValid;
 }
 
@@ -32,23 +33,28 @@ function getCheckedRadios(radio_names){
 }
 
 function clickSubmit(){
+    //this function runs after the final Submit button is clicked
+
     radio_names=['host_rate', 'bev_rate', 'clean_rate', 'overall_rate']
 
+    //get name, email and phone from previous page using session variables
     name = sessionStorage.getItem("name")
     email = sessionStorage.getItem("email")
     phone = sessionStorage.getItem("phone")
 
+    //get true/false values of validations
     radioValResult = validateRadios(radio_names)
     nameValResult = validateName(name)
     emailValResult = validateEmail(email)
     phoneValResult = validateNum(phone)
 
-    if(nameValResult && emailValResult && phoneValResult){
-        if(radioValResult){
+    if(nameValResult && emailValResult && phoneValResult){  //if name, email and phone are correctly filled
+        if(radioValResult){                                 //if radio buttons are correctly filled
             const selectedValues = getCheckedRadios(radio_names)
             console.log(name,email,phone,selectedValues);
             sessionStorage.clear();
 
+            //create an object with entered data
             let data = {
                 name: name,
                 email: email,
@@ -57,22 +63,23 @@ function clickSubmit(){
                 bev_rate: selectedValues[1],
                 clean_rate: selectedValues[2],
                 overall_rate: selectedValues[3],
-            };
+            };                                      
 
+            //fetch function to send a POST request to server
             fetch("/api/feedbacks", {
                 method: "POST",
                 headers: {'Content-Type': 'application/json'}, 
-                body: JSON.stringify(data)
+                body: JSON.stringify(data)                      // convert to JSON
             })
             .then(res => {
                 console.log("Save Request complete! response:", res);
             });
-            sessionStorage.setItem('FormSuccess', true)
+            sessionStorage.setItem('FormSuccess', true)     //flags for page entry validation
             sessionStorage.setItem('RadioSuccess', true)
-            window.location.href = "FeedbackSuccess"
+            window.location.href = "FeedbackSuccess"        //redirect to Success Page
         }
     } else {
         sessionStorage.clear()
-        window.location.href = "FeedbackForm"
+        window.location.href = "FeedbackForm"       //if name, email and phone are invalid, redirect to form
     }
 }

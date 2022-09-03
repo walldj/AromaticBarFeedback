@@ -1,3 +1,5 @@
+// animation sequence using GSAP for Splash Close
+
 let tl_splashOut = new gsap.timeline({defaults: {ease: Circ.easeOut}})
 let cta1 = document.getElementById('cta1')
 tl_splashOut.paused(true)

@@ -39,10 +39,12 @@ function validate(){
     tl_FormOut.paused(true)
     // /animation initialisation
 
+    //get entered data
     name = document.getElementById('cust_name').value;
     email = document.getElementById('cust_email').value;
     phone = document.getElementById('cust_phone').value;
 
+    //modify error message based on validation
     if(emailValResult = validateEmail(email)){
         document.getElementById('emailVal').innerHTML = ""
     } else {
@@ -71,10 +73,11 @@ function validate(){
         //animation script
         tl_FormOut.play()
         setTimeout(()=>{
-            window.location.href = "FeedbackRadios";            
+            window.location.href = "FeedbackRadios";            //if valid redirect to next page : FeedbackRadios
         },500)
         tl_FormOut.to('.form-container', {y:0, opacity:1, stagger: .05})
         tl_FormOut.to('.seq', {y:0, opacity:1, stagger: .05})
+        // ^ animation outro
         
         
     }
