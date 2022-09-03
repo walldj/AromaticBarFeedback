@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    place-content: center;
+    background: rgb(43, 11, 53);
+    background-image: radial-gradient(rgb(102, 38, 90),rgb(43, 11, 53));
+    height: 100vh;
+}
+
+.splash-screen{
+    font-size: large;
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 25px;
+    margin-top: -20px;
+    font-family: 'Berkshire Swash', cursive;
+    color: rgb(220, 184, 22);
+}
+
+.cta1{
+    display: block;
+    background-color: rgb(254, 33, 139);
+    color: aliceblue;
+    text-decoration: none;
+    padding: .8em;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 3em;
+    max-width: 200px;
+}
+
+.splash-item{
+    opacity: 0;
+}   
+
+
+#splash-logo{
+    width:600px;
+    
+    margin-bottom: -50px;
+}
+
+
+.form-container{
+    max-width: 900px;
+    /* box-shadow: 0px 0px 40px rgb(167, 127, 179); */
+    border-radius: 2em;
+    padding: 2em;
+    margin-top: -40px;
+    /* margin-bottom: 30px; */
+    color:aliceblue;
+    opacity:0;
+    font-family: 'Rubik', sans-serif;
+
+    
+}
+
+.cta{
+    display: block;
+    background-color: rgb(254, 33, 139);
+    color: aliceblue;
+    text-decoration: none;
+    padding: .8em;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 3em;
+    max-width: 200px;
+}
+
+.seq{
+    opacity:0;
+}
+
+
+h1{
+    margin: 3em 0 .5em;
+}
+
+.details{
+    display: block;
+    font-weight: bold;
+    margin-top: 1.5em;
+}
+
+.details-ip{
+    width: 100%;
+    padding: 0.60em;
+    border: 1px solid gray;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    font-size: large;
+    font-weight: 520;
+}
+
+.details-ip, a{
+    border-radius: .5em;
+}
+
+.validation{
+    color:rgb(234, 130, 130);
+    font-size: 1em;
+}
+
+#radios_h3{
+    text-align: center;
+    width: 600px;
+    margin-bottom: 2em;
+    font-size: 2em;
+    
+}
+
+.radios{
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.radios > p{
+    font-size: larger;
+    font-weight: bold;
+    text-shadow: 0px 2px 30px black;
+}
+
+.radios > input,label{
+    margin: 0 2em;
+}
+
+.radios > input{
+    size: 10px;
+}
+
+.radios > label{
+    margin-left: -1em;
+    font-size: 1.2em;
+    
+}
+

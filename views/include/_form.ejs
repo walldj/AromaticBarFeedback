@@ -1,0 +1,20 @@
+<script src="js/validate.js"></script>
+<div class="form-container" id="form">
+    <h2 class="seq">Please fill out this questionnaire. Thank You!</h2>
+    <h3 class="seq">Enter your personal details</h3>
+    <form action="" method="post">
+        <label for="cust_name" class="seq details">Customer Name<span style="color:red">*</span></label>
+        <input type="text" class="seq details-ip" name="cust_name" id="cust_name" required/>
+        <p class="validation" id="nameVal"></p>
+        <label for="cust_email" class="seq details">Email<span style="color:red">*</span></label>
+        <input type="text" class="seq details-ip" name="cust_email" id="cust_email"  required/>
+        <p class="validation" id="emailVal"></p>
+        <label for="cust_phone" class="seq details">Phone Number<span style="color:red">*</span></label>
+        <input type="text" class="seq details-ip" name="cust_phone" id="cust_phone"required/>
+        <p class="validation" id="phoneVal"></p>
+        <a onclick="validate()" class="cta seq">Next</a> 
+    </form>
+    <script src="js/animate_FormOpen.js"></script>
+    <script src="js/animate_FormOut.js"></script>
+
+</div>
